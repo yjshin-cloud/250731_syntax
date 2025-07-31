@@ -130,7 +130,7 @@ public class Solution03 {
         // true || false -> true // x
         // false || false -> (false ||) false
 //        System.out.println("++ --");
-//        int num = 0;
+        int num = 0;
 //        System.out.println(" (num++ == 0) && (num++ == 1) : "
 //                + ((++num == 0) && (num++ == 1)));
 //        System.out.println(num); // 1 -> (num++ == 1) 안 넘어감

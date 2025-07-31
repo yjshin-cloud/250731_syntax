@@ -62,10 +62,9 @@ public class Solution01 {
 
         System.out.print("본인이 좋아하는 아이돌을 입력해주세요 : ");
         // int idol = scanner.nextInt(); // 아이돌 입력을 받겠다
-       //  String idol = scanner.next(); // 아이돌 입력을 받겠다
-        String idol = scanner.nextLine(); // 아이돌 입력을 받겠다
+       //  String idol = scanner.next(); // 단어 한 개 입력 (문자 한 개 입력 ->\n을 무시함)
+        String idol = scanner.nextLine(); // 한 줄 입력 (\n을 만날 때까지)
         // Java는 타입 추론이 없나? Java가 var(JDK 10)가 있음.
-
         // 입력 받는 방법에 따라 '타입'이라는게 바뀐다 -> 이 타입을 변수에 붙여줘야한다
         System.out.println("당신이 좋아하는 아이돌은 " + idol + "입니다!\uD83E\uDD23");
 

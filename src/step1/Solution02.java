@@ -39,6 +39,8 @@ public class Solution02 {
 
         // https://g.co/gemini/share/28c12be7c156
         // jvm, gc에 대해서 (변수-메모리)
+        int a = 1_000_000_000; // 3자리 기준으로 _로 구분할 수 있음
+        long b = 30_000_000_000L; // Long은
 
     }
 }

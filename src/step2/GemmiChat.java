@@ -5,8 +5,39 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.Scanner;
+// ↓ import 추가 20250731 19:15
+import java.util.Properties;
+import java.io.FileInputStream;
+import java.io.IOException;
 
 public class GemmiChat {
+
+    // code add 20250731 19:15
+    // API 키를 프로젝트 루트의 config.properties에서 로드하는 메서드
+    private static String loadApiKey() {
+        Properties properties = new Properties();
+
+        // 프로젝트 루트의 config.properties 파일 경로
+        String configFile = "config.properties";
+
+        try (FileInputStream input = new FileInputStream(configFile)) {
+            properties.load(input);
+            String apiKey = properties.getProperty("gemini.api.key");
+
+            if (apiKey == null || apiKey.trim().isEmpty() || apiKey.equals("여기에_실제_API_키를_입력하세요")) {
+                throw new RuntimeException("API 키가 config.properties 파일에 올바르게 설정되지 않았습니다.");
+            }
+
+            return apiKey;
+
+        } catch (IOException e) {
+            throw new RuntimeException("config.properties 파일을 찾을 수 없습니다. 프로젝트 루트에 파일을 생성해주세요.\n" +
+                    "오류 내용: " + e.getMessage());
+        }
+    }
+
+
+
     // main
     // 입출력
     // 변수, 타입
@@ -24,7 +55,7 @@ public class GemmiChat {
         // API 키 만들기
         // 예시 : *****************
         HttpClient client = HttpClient.newHttpClient(); // 요청을 보내주는 친구
-        String GEMINI_API_KEY = "API KEY 복붙";
+        String GEMINI_API_KEY = loadApiKey(); // code edit 20250731 19:15
         // 이건 절대 푸시하면 안된다 (open 되면 안된다... 이거 open하면 구글이 알아서 차단해줌)
         String rule = "100자 이내, 간결하게, 답변만 출력.";
         HttpRequest request = HttpRequest.newBuilder()

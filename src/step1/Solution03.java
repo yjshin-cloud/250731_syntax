@@ -96,25 +96,25 @@ public class Solution03 {
 //        System.out.println("n1 < n2 : " + (n1 > n2)); // ( )를 사용하면 우선도 확보
 
         // 19세 음주. 55세 연금.
-        System.out.print("당신의 나이는? ");
-        int age = sc.nextInt();
+//        System.out.print("당신의 나이는? ");
+//        int age = sc.nextInt();
         // 19세 미만이라 음주도 안돼, 연금도 못 받아
         // 19세 이상이라 음주는 돼, 근데 연금은 못 받아
         // 55세 이상이라 음주도 돼, 연금도 받아
 
-        System.out.println("음주 no, 연금 no" + (age < 19));
+//        System.out.println("음주 no, 연금 no" + (age < 19));
 //        System.out.println("음주 ok, 연금 no" + (age >= 19) + (age < 55));
-        System.out.println("음주 ok, 연금 no" + (age >= 19 && age < 55));
-        System.out.println("음주 ok, 연금 ok" + (age >= 55));
+//        System.out.println("음주 ok, 연금 no" + (age >= 19 && age < 55));
+//        System.out.println("음주 ok, 연금 ok" + (age >= 55));
         // 15 : false / true
         // 20 : true / true
         // 60 : true / false
 
-        System.out.println("당신이 갖고 있는 돈은? : ");
-        int money = sc.nextInt();
+//        System.out.print("당신이 갖고 있는 돈은? : ");
+//        int money = sc.nextInt();
         // 삼각김밥 1000원, 제로콜라 2000원
         // \(또는 \) -> | (shift)
-        System.out.println("삼각김밥 똔느 제로콜라 구매 가능" + (money >= 1000 || money >= 2000));
+//        System.out.println("삼각김밥 똔느 제로콜라 구매 가능" + (money >= 1000 || money >= 2000));
 
         // && || (단축연산자) -> &, | (비트연산자)
         // &&는 앞에 온 boolean이 false면 평가 종료하고 false로 리턴.
@@ -129,5 +129,19 @@ public class Solution03 {
         // false && true -> false // x
         // true || false -> true // x
         // false || false -> (false ||) false
+//        System.out.println("++ --");
+//        int num = 0;
+//        System.out.println(" (num++ == 0) && (num++ == 1) : "
+//                + ((++num == 0) && (num++ == 1)));
+//        System.out.println(num); // 1 -> (num++ == 1) 안 넘어감
+
+        // 일부러 이렇게 하는 경우도 있음.
+        // 위에 케이스에는 바로 연산자에서 비교하면서 작동하게 만들었으므로...
+
+        boolean c1 = num++ == 0;
+        boolean c2 = num++ == 1; // 연산을 시켜서 변수에 담았으므로 연산이 일어나는데
+        System.out.println(c1 || c2);
+        System.out.println(num);
+
     }
 }

@@ -54,14 +54,22 @@ public class Solution01 {
 
         System.out.print("본인이 좋아하는 숫자를 입력해주세요 : ");
         int num = scanner.nextInt(); // 숫자 입력을 받겠다
-        System.out.println("당신이 좋아하는 숫자는 " + num + "입니다!");
+        // 내가 어떤 값을 받아서 재사용을 하려면 이름을 적어서 저장해둬야한다 - 변수
+        // 숫자 -> 입력을 하면 \n\ 남아있음
+        // (엔터를 쳐서 줄바꿈으로 입력하니까...)
+        scanner.nextLine();
+        System.out.println("당신이 좋아하는 숫자는 " + num + "입니다!\uD83E\uDD23");
 
         System.out.print("본인이 좋아하는 아이돌을 입력해주세요 : ");
         // int idol = scanner.nextInt(); // 아이돌 입력을 받겠다
-        String idol = scanner.next(); // 아이 입력을 받겠다
-        System.out.println("당신이 좋아하는 아이돌은 " + idol + "입니다!");
+       //  String idol = scanner.next(); // 아이돌 입력을 받겠다
+        String idol = scanner.nextLine(); // 아이돌 입력을 받겠다
+        // Java는 타입 추론이 없나? Java가 var(JDK 10)가 있음.
 
-        scanner.close();
+        // 입력 받는 방법에 따라 '타입'이라는게 바뀐다 -> 이 타입을 변수에 붙여줘야한다
+        System.out.println("당신이 좋아하는 아이돌은 " + idol + "입니다!\uD83E\uDD23");
+
+        scanner.close(); // 다 썼으니까 반환
 
     }
 }
